@@ -4,6 +4,8 @@ public class CreateForm {
 
   private String name;
 
+  private String birthday;
+
 
   public String getName() {
     return name;
@@ -13,4 +15,12 @@ public class CreateForm {
     this.name = name;
   }
 
+  public String getBirthday() {
+    return birthday;
+  }
+
+  public void setBirthday(String birthday) {
+    this.birthday = birthday;
+  }
 }
+
