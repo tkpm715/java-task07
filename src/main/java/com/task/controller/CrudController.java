@@ -19,14 +19,14 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
-public class DisplayController {
+public class CrudController {
 
   @GetMapping("/names")
   public List<UserData> read() {
 
     UserData[] UserData = new UserData[2];
-    UserData[0] = new UserData("tanaka");
-    UserData[1] = new UserData("suzuki");
+    UserData[0] = new UserData("tanaka", "1990/5/10");
+    UserData[1] = new UserData("suzuki", "2000/8/20");
 
     List<UserData> list = new ArrayList<>();
 
@@ -57,7 +57,6 @@ public class DisplayController {
 
   @DeleteMapping("/names")
   public ResponseEntity<Map<String, String>> delete() {
-
 
     return ResponseEntity.ok(Map.of("message", "successfully delete"));
 
