@@ -1,5 +1,6 @@
 package com.task.controller;
 
+import com.task.Birthday;
 import com.task.UserData;
 import com.task.form.CreateForm;
 import com.task.form.UpdateForm;
@@ -24,9 +25,9 @@ public class CrudController {
   @GetMapping("/names")
   public List<UserData> read() {
 
-    UserData[] UserData = new UserData[2];
-    UserData[0] = new UserData("tanaka", "1990/5/10");
-    UserData[1] = new UserData("suzuki", "2000/8/20");
+    UserData[] UserData = new UserData[5];
+    UserData[0] = new UserData("tanaka", "1990/05/10");
+    UserData[1] = new UserData("suzuki", "2000/08/20");
 
     List<UserData> list = new ArrayList<>();
 
@@ -35,6 +36,31 @@ public class CrudController {
 
     return list;
   }
+
+  @GetMapping("/names/{base-birthday}")
+  public List<UserData> readBirthday(
+      @PathVariable("base-birthday") String baseBirthday) {
+    UserData[] userData = new UserData[5];
+    userData[0] = new UserData("tanaka", "1990/05/10");
+    userData[1] = new UserData("suzuki", "2000/08/20");
+    userData[2] = new UserData("sato", "1995/03/05");
+    userData[3] = new UserData("inoue", "2005/10/05");
+    userData[4] = new UserData("sasaki", "2003/02/12");
+
+    List<UserData> list = new ArrayList<>();
+
+    //URLパラメータから受け取った年月の文字列baseBirthday以降のオブジェクトだけを取得表示
+    for (int i = 0; i < 5; i++) {
+      Birthday birthday =
+          new Birthday(userData[i].getBirthday(), baseBirthday + "-01");
+      if (birthday.dateCheck()) {
+        list.add(userData[i]);
+      }
+    }
+
+    return list;
+  }
+
 
   @PostMapping("/names")
   public ResponseEntity<String> create(@RequestBody CreateForm createForm) {
@@ -49,7 +75,8 @@ public class CrudController {
 
   @PatchMapping("/names/{id}")
   public ResponseEntity<Map<String, String>> update(@PathVariable("id") int id,
-                                                    @RequestBody UpdateForm updateForm) {
+                                                    @RequestBody
+                                                    UpdateForm updateForm) {
 
 
     return ResponseEntity.ok(Map.of("message", "successfully updated"));

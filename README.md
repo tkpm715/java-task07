@@ -1,9 +1,21 @@
 # 第7回課題概要
+
+***
+## 追加課題
+・yyyy年mm月以降に産まれた人のデータをまとめて取得する<br><br>
+▼ユーザーデータ
+![2022-1](https://user-images.githubusercontent.com/101798620/175555054-e53e2049-94e9-48f3-9ec1-894a9673d20a.png)
+
+▼2000年8月以降に生まれた人のデータを取得<br>
+年月の指定はURLパラメータで設定(2000-08)
+![2022](https://user-images.githubusercontent.com/101798620/175555361-26823d32-24d2-43d0-8134-90046db69bcb.png)
+
+***
+## 第７回課題内容
 HTTPメソッドのGET/POST/PATCH/DELETEのリクエストを扱えるControllerを実装。<br>
 オリジナルの仕様として生年月日を受け取れるように実装
 
-***
-## 各HTTPメソッドのリクエスト結果
+### 各HTTPメソッドのリクエスト結果
 
 ### GET
 ![01get](https://user-images.githubusercontent.com/101798620/175304297-99aae540-39f2-42ad-896c-697fa7e277b0.png)
