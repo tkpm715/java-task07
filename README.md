@@ -2,13 +2,28 @@
 
 ***
 ## 追加課題
-・yyyy年mm月以降に産まれた人のデータをまとめて取得する<br><br>
+yyyy年mm月dd日以降に産まれた人のデータをまとめて取得する<br>
+
+
+
+
+
 ▼ユーザーデータ<br>
-![2022-1](https://user-images.githubusercontent.com/101798620/175555054-e53e2049-94e9-48f3-9ec1-894a9673d20a.png)
+![20220626-01](https://user-images.githubusercontent.com/101798620/175814091-502552c0-3b8c-4c14-bf12-4d3d7b9bf552.png)
+
 
 ▼2000年8月以降に生まれた人のデータを取得<br>
 年月の指定はURLパラメータで設定(2000-08)<br>
 ![2022](https://user-images.githubusercontent.com/101798620/175555361-26823d32-24d2-43d0-8134-90046db69bcb.png)
+
+## 追加機能<br>
+▼URLパラメータで送られてくるデータが存在しない年月日の場合、エラーを返す。<br>
+![20220626-02](https://user-images.githubusercontent.com/101798620/175814153-e71b95ce-5577-4132-a825-1c269f891738.png)
+<br>
+▼URLパラメータの値が「yyyy-mm-dd」のフォーマット以外の場合、エラーを返す。<br>
+![20220626-03](https://user-images.githubusercontent.com/101798620/175814183-44cfd525-2b55-487a-af9f-8007c5239d1a.png)
+<br>
+
 
 ***
 ## 第７回課題内容

@@ -1,6 +1,7 @@
 package com.task.controller;
 
 import com.task.Birthday;
+import com.task.Name;
 import com.task.UserData;
 import com.task.form.CreateForm;
 import com.task.form.UpdateForm;
@@ -41,24 +42,22 @@ public class CrudController {
   public List<UserData> readBirthday(
       @PathVariable("base-birthday") String baseBirthday) {
     UserData[] userData = new UserData[5];
-    userData[0] = new UserData("tanaka", "1990/05/10");
-    userData[1] = new UserData("suzuki", "2000/08/20");
-    userData[2] = new UserData("sato", "1995/03/05");
-    userData[3] = new UserData("inoue", "2005/10/05");
-    userData[4] = new UserData("sasaki", "2003/02/12");
 
     List<UserData> list = new ArrayList<>();
 
     //URLパラメータから受け取った年月の文字列baseBirthday以降のオブジェクトだけを取得表示
-    for (int i = 0; i < 5; i++) {
-      Birthday birthday =
-          new Birthday(userData[i].getBirthday(), baseBirthday + "-01");
-      if (birthday.dateCheck()) {
-        list.add(userData[i]);
-      }
-    }
+       for (int i = 0; i < 5; i++) {
+        Birthday birthdayCheck =
+            new Birthday(i, baseBirthday );
 
-    return list;
+        if (birthdayCheck.dateCheck()) {
+          Birthday birthday = new Birthday(i, "");
+          Name name = new Name(i);
+          userData[i] = new UserData(name.toString(), birthday.toString());
+          list.add(userData[i]);
+        }
+      }
+      return list;
   }
 
 
