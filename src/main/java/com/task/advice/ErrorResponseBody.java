@@ -1,15 +1,25 @@
 package com.task.advice;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 public class ErrorResponseBody {
 
-  @JsonProperty("status")
+
   private int status;
-  @JsonProperty("error")
+
   private String error;
-  @JsonProperty("message")
+
   private String message;
+
+  public int getStatus() {
+    return status;
+  }
+
+  public String getError() {
+    return error;
+  }
+
+  public String getMessage() {
+    return message;
+  }
 
   public void setStatus(int status) {
     this.status = status;

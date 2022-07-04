@@ -3,12 +3,16 @@ package com.task;
 public class UserData {
 
   private String name;
-
   private String birthday;
+  private String[] nameData;
 
   public UserData(final String name, final String birthday) {
     this.name = name;
-    this.birthday = birthday;
+
+    Birthday validBirthday = new Birthday(birthday);
+    validBirthday.extractBirthdayData();
+
+    this.birthday = validBirthday.getBirthday();
   }
 
   public String getName() {
