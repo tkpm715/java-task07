@@ -22,7 +22,8 @@ URLパラメータからユーザ名と生年月日を受け取り、下記条�
 ### ▼存在しない生年月日データを受け取った場合<br>
 ![20220705-task07-02](https://user-images.githubusercontent.com/101798620/177292921-6755dbc1-146b-4f05-a156-05bb8be748b4.png)
 
-
+### ▼生年月日のフォーマットが正しくない場合<br>
+![20220706-task07-00](https://user-images.githubusercontent.com/101798620/177534731-af407868-607e-4769-9919-6f03fe468865.png)
 ***
 ## 第７回課題内容
 HTTPメソッドのGET/POST/PATCH/DELETEのリクエストを扱えるControllerを実装。<br>
