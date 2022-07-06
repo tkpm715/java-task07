@@ -2,27 +2,25 @@
 
 ***
 ## 追加課題
-yyyy年mm月dd日以降に産まれた人のデータをまとめて取得する<br>
-
-
-
-
-
-▼ユーザーデータ<br>
-![20220626-01](https://user-images.githubusercontent.com/101798620/175814091-502552c0-3b8c-4c14-bf12-4d3d7b9bf552.png)
-
-
-▼2000年8月以降に生まれた人のデータを取得<br>
-年月の指定はURLパラメータで設定(2000-08)<br>
-![2022](https://user-images.githubusercontent.com/101798620/175555361-26823d32-24d2-43d0-8134-90046db69bcb.png)
-
-## 追加機能<br>
-▼URLパラメータで送られてくるデータが存在しない年月日の場合、エラーを返す。<br>
-![20220626-02](https://user-images.githubusercontent.com/101798620/175814153-e71b95ce-5577-4132-a825-1c269f891738.png)
+URLパラメータからユーザ名と生年月日を受け取り、下記条件に合致する場合はそのJsonデータを返す。
 <br>
-▼URLパラメータの値が「yyyy-mm-dd」のフォーマット以外の場合、エラーを返す。<br>
-![20220626-03](https://user-images.githubusercontent.com/101798620/175814183-44cfd525-2b55-487a-af9f-8007c5239d1a.png)
+・生年月日が１９００年からシステム年であること<br>
+・生年月日の入力フォーマットが「yyyy-mm-dd」であること<br>
 <br>
+条件に合致しない場合はエラーメッセージを返す。<br><br>
+受け取った生年月日データはBirthdayクラスに渡し、そのクラス内で正常データか否か検証する（ValueObject）
+
+### ▼データ正常時<br>
+![20220705-task07-03](https://user-images.githubusercontent.com/101798620/177292266-a40076e6-aedb-4e8c-b72d-12adf08bdcbe.png)
+
+### ▼生年月日が1900年より以前の場合<br>
+![20220705-task07-01](https://user-images.githubusercontent.com/101798620/177292612-9bfa76f2-dac0-46d2-97bd-6e8d4cec593f.png)
+
+### ▼生年月日がシステム年より以降の場合<br>
+![20220705-task07-05](https://user-images.githubusercontent.com/101798620/177293162-d34c9462-8c50-4f5b-8181-0ea8d487ca3f.png)
+
+### ▼存在しない生年月日データを受け取った場合<br>
+![20220705-task07-02](https://user-images.githubusercontent.com/101798620/177292921-6755dbc1-146b-4f05-a156-05bb8be748b4.png)
 
 
 ***

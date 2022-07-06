@@ -36,12 +36,12 @@ public class CrudController {
     return userList;
   }
 
-  @GetMapping("/names/{base-birthday}/{user-name}")
+  @GetMapping("/names/{user-birthday}/{user-name}")
   public UserData readBirthday(
-      @PathVariable("base-birthday") String baseBirthday,
+      @PathVariable("user-birthday") String userBirthday,
       @PathVariable("user-name") String userName) {
 
-    UserData userData = new UserData(userName, baseBirthday);
+    UserData userData = new UserData(userName, userBirthday);
 
     return userData;
   }

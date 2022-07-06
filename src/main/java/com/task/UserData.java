@@ -4,7 +4,6 @@ public class UserData {
 
   private String name;
   private String birthday;
-  private String[] nameData;
 
   public UserData(final String name, final String birthday) {
     this.name = name;
