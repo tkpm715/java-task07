@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -24,17 +25,27 @@ public class CrudController {
   @GetMapping("/names")
   public List<UserData> read() {
 
-    UserData[] UserData = new UserData[2];
-    UserData[0] = new UserData("tanaka", "1990/5/10");
-    UserData[1] = new UserData("suzuki", "2000/8/20");
+    UserData[] userData = new UserData[5];
+    userData[0] = new UserData("tanaka", "1990/05/10");
+    userData[1] = new UserData("suzuki", "2000/08/20");
 
-    List<UserData> list = new ArrayList<>();
+    List<UserData> userList = new ArrayList<>();
 
-    list.add(UserData[0]);
-    list.add(UserData[1]);
+    userList.add(userData[0]);
+    userList.add(userData[1]);
 
-    return list;
+    return userList;
   }
+
+  @GetMapping("/names2")
+  public UserData readBirthday(@RequestParam String birthday,
+                               @RequestParam String name) {
+
+    UserData userData = new UserData(name, birthday);
+
+    return userData;
+  }
+
 
   @PostMapping("/names")
   public ResponseEntity<String> create(@RequestBody CreateForm createForm) {
@@ -49,7 +60,8 @@ public class CrudController {
 
   @PatchMapping("/names/{id}")
   public ResponseEntity<Map<String, String>> update(@PathVariable("id") int id,
-                                                    @RequestBody UpdateForm updateForm) {
+                                                    @RequestBody
+                                                    UpdateForm updateForm) {
 
 
     return ResponseEntity.ok(Map.of("message", "successfully updated"));
